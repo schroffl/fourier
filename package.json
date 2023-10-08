@@ -1,0 +1,15 @@
+{
+    "name": "fourier",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "esbuild --bundle --outdir=dist/ --sourcemap=inline index.ts",
+        "watch": "npm run build -- --watch"
+    },
+    "author": "schroffl",
+    "license": "MIT",
+    "devDependencies": {
+        "esbuild": "^0.19.4"
+    }
+}
