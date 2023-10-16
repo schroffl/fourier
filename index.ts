@@ -48,6 +48,28 @@ class PlotView {
         };
     }
 
+    set top_left(point: Point) {
+        const w = this.bottom_right.x - point.x;
+        const h = point.y - this.bottom_right.y;
+
+        this.size = { w, h };
+        this.center = {
+            x: point.x + w / 2,
+            y: point.y - h / 2,
+        };
+    }
+
+    set bottom_right(point: Point) {
+        const w = point.x - this.top_left.x;
+        const h = this.top_left.y - point.y;
+
+        this.size = { w, h };
+        this.center = {
+            x: point.x - w / 2,
+            y: point.y + h / 2,
+        };
+    }
+
     project(point: Point): Point {
         const cx = this.center.x;
         const cy = this.center.y;
